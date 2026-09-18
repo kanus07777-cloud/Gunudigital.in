@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gunu Digital — Digital Seva, Aapke Liye</title>
+<meta name="description" content="Gunu Digital — Online services and digital business solutions.">
+<style>
+:root{
+  --pink:#d43f78; --pink2:#ef78a6; --dark:#20202a; --muted:#686875;
+  --card:rgba(255,255,255,.84); --line:rgba(212,63,120,.16);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:Inter,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+  color:var(--dark); line-height:1.6;
+  background:
+    radial-gradient(circle at 15% 10%,rgba(255,255,255,.85) 0 2px,transparent 3px),
+    radial-gradient(circle at 80% 25%,rgba(255,255,255,.55) 0 1px,transparent 3px),
+    linear-gradient(135deg,#fff1f6,#fce1eb 48%,#fff5f8);
+  background-size:32px 32px,46px 46px,100% 100%;
+  min-height:100vh;
+}
+a{text-decoration:none;color:inherit}
+.container{width:min(1120px,92%);margin:auto}
+header{
+  position:sticky;top:0;z-index:20;
+  background:rgba(255,245,248,.88);backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--line);
+}
+.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:22px}
+.logo-mark{width:42px;height:42px;border-radius:14px;background:linear-gradient(135deg,#d43f78,#f49bbb);color:white;display:grid;place-items:center;font-size:22px;box-shadow:0 8px 22px #d43f7830}
+.logo small{display:block;font-size:11px;color:var(--muted);font-weight:500}
+nav{display:flex;gap:28px;font-size:14px}
+nav a:hover{color:var(--pink)}
+.nav-btn,.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border-radius:999px;padding:12px 21px;font-weight:700;border:1px solid var(--pink);transition:.2s}
+.nav-btn{background:white;color:var(--pink)}
+.btn.primary{background:var(--pink);color:white;box-shadow:0 10px 24px #d43f7830}
+.btn.secondary{background:white;color:var(--pink)}
+.btn:hover{transform:translateY(-2px)}
+.hero{padding:82px 0 55px}
+.hero-grid{display:grid;grid-template-columns:1.03fr .97fr;align-items:center;gap:55px}
+.badge{display:inline-flex;padding:7px 14px;border-radius:999px;background:#fff;border:1px solid var(--line);color:#9d2c5e;font-size:13px;font-weight:700;margin-bottom:18px}
+h1{font-size:clamp(42px,5.3vw,70px);line-height:1.05;letter-spacing:-2.5px;margin-bottom:20px}
+h1 span{color:var(--pink)}
+.hero p{font-size:17px;color:var(--muted);max-width:600px;margin-bottom:27px}
+.actions{display:flex;gap:12px;flex-wrap:wrap}
+.trust{display:flex;gap:25px;flex-wrap:wrap;margin-top:27px;font-size:13px;font-weight:650}
+.hero-art{min-height:410px;border-radius:38px;border:1px solid rgba(255,255,255,.9);background:linear-gradient(145deg,#fff9fbcc,#f7c9dccc);box-shadow:0 28px 70px #a62d5a22;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.hero-art:before,.hero-art:after{content:"";position:absolute;border-radius:50%;filter:blur(1px)}
+.hero-art:before{width:240px;height:240px;background:#fff6;top:-70px;right:-50px}
+.hero-art:after{width:170px;height:170px;background:#ef78a633;bottom:-50px;left:-40px}
+.illustration{font-size:120px;position:relative;z-index:1;filter:drop-shadow(0 18px 18px #7d2c4c22)}
+.hero-note{position:absolute;z-index:2;background:#fffdfd;padding:12px 18px;border-radius:18px;box-shadow:0 15px 35px #7d2c4c1c;font-weight:800}
+.note1{top:55px;left:35px}.note2{right:32px;bottom:60px}
+.category-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:18px 0 78px}
+.category{padding:24px;border-radius:22px;background:var(--card);border:1px solid white;box-shadow:0 12px 35px #8d315015;display:flex;justify-content:space-between;align-items:center}
+.category b{display:block}.category small{color:var(--muted)}
+.icon{width:48px;height:48px;border-radius:16px;background:#fde0eb;display:grid;place-items:center;font-size:22px}
+.section{padding:25px 0 78px}
+.eyebrow{font-size:12px;color:var(--pink);font-weight:900;letter-spacing:1px;text-transform:uppercase}
+.section h2{font-size:38px;line-height:1.15;margin:7px 0 8px}
+.section-intro{color:var(--muted);margin-bottom:25px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:var(--card);border:1px solid white;border-radius:25px;overflow:hidden;box-shadow:0 14px 40px #8d315012}
+.card-head{padding:23px;background:linear-gradient(135deg,#fff,#ffe8f0)}
+.card-head h3{font-size:20px}.card-head p{color:var(--muted);font-size:13px}
+.list{padding:8px 22px 18px}
+.item{display:flex;justify-content:space-between;gap:10px;padding:13px 0;border-bottom:1px solid #eee2e7;font-size:14px}
+.item:last-child{border:0}.price{font-weight:800;color:#9e2f60;white-space:nowrap}
+.package{margin-top:35px;padding:32px;border-radius:28px;background:linear-gradient(120deg,#fff,#ffdce8);border:1px solid white;display:grid;grid-template-columns:1.1fr 1fr;gap:25px;align-items:center;box-shadow:0 20px 50px #8d315018}
+.package h3{font-size:30px}.package ul{columns:2;list-style:none;margin:16px 0}.package li{padding:6px 0}.package li:before{content:"✓";color:var(--pink);font-weight:900;margin-right:8px}
+.big-price{font-size:40px;font-weight:900;color:var(--pink);margin:10px 0 18px}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:25px;align-items:stretch}
+.panel{background:var(--card);border:1px solid white;border-radius:26px;padding:30px;box-shadow:0 15px 40px #8d315012}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:25px}
+.stat{padding:18px;border-radius:18px;background:#fff0f5;text-align:center}.stat b{font-size:25px;color:var(--pink);display:block}
+.contact{display:grid;grid-template-columns:1fr .8fr;gap:20px}
+footer{padding:30px 0;border-top:1px solid var(--line);margin-top:30px}
+.footer{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;color:var(--muted);font-size:13px}
+.whatsapp-float{position:fixed;right:22px;bottom:22px;z-index:30;width:58px;height:58px;border-radius:50%;background:#25D366;color:white;display:grid;place-items:center;font-size:26px;box-shadow:0 12px 30px #174d2a45}
+@media(max-width:800px){
+ nav{display:none}.hero{padding-top:55px}.hero-grid,.about,.contact,.package{grid-template-columns:1fr}
+ .cards,.category-grid{grid-template-columns:1fr}.hero-art{min-height:300px}.illustration{font-size:90px}
+ .package ul{columns:1}.stats{grid-template-columns:1fr 1fr}h1{letter-spacing:-1.5px}
+}
+
+/* Modern inquiry form */
+.inquiry-wrap{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:.82fr 1.18fr;gap:26px;align-items:stretch}
+.inquiry-info{position:relative;overflow:hidden;background:linear-gradient(145deg,#fff,#fff5fa);border:1px solid #f0dce7;border-radius:26px;padding:34px;text-align:left;box-shadow:0 16px 45px rgba(116,55,91,.09)}
+.inquiry-info:after{content:"";position:absolute;width:190px;height:190px;border-radius:50%;background:rgba(240,128,177,.12);right:-75px;top:-75px}
+.inquiry-badge{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:#fff;border:1px solid #efdce7;color:#a64272;font-weight:800;font-size:12px}
+.inquiry-info h3{font-size:30px;line-height:1.2;margin:18px 0 10px;color:#332833}
+.inquiry-info p{color:#716873;line-height:1.7;margin:0 0 22px}
+.inquiry-points{display:grid;gap:13px}.inquiry-point{display:flex;gap:11px;align-items:flex-start;color:#4d454e;font-size:14px}.inquiry-point .dot{width:30px;height:30px;flex:0 0 30px;border-radius:10px;display:grid;place-items:center;background:#fff;border:1px solid #eedbe5}
+.inquiry-card{background:#fff;border:1px solid #eadde5;border-radius:26px;padding:30px;box-shadow:0 18px 50px rgba(75,42,61,.10);text-align:left}
+.inquiry-head{display:flex;justify-content:space-between;gap:15px;align-items:flex-start;margin-bottom:22px}.inquiry-head h3{margin:0;font-size:24px;color:#30272f}.inquiry-head p{margin:5px 0 0;color:#827982;font-size:13px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}.field{display:grid;gap:7px}.field.full{grid-column:1/-1}.field label{font-size:12px;font-weight:800;color:#514751}.field input,.field select,.field textarea{width:100%;box-sizing:border-box;padding:14px 15px;border:1px solid #e6d9e1;border-radius:13px;background:#fff;font:inherit;color:#302a31;outline:none;transition:.2s}.field textarea{resize:vertical;min-height:108px}.field input:focus,.field select:focus,.field textarea:focus{border-color:#d878a5;box-shadow:0 0 0 4px rgba(216,120,165,.12)}
+.inquiry-submit{width:100%;margin-top:17px;padding:15px 18px;border:0;border-radius:14px;background:linear-gradient(135deg,#d85f91,#b84d82);color:#fff;font-weight:900;font-size:15px;cursor:pointer;box-shadow:0 10px 25px rgba(184,77,130,.22);transition:.2s}.inquiry-submit:hover{transform:translateY(-2px)}
+.inquiry-note{text-align:center;color:#8a8088;font-size:11px;margin:11px 0 0}
+@media(max-width:780px){.inquiry-wrap{grid-template-columns:1fr}.inquiry-info,.inquiry-card{padding:24px}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.inquiry-head{display:block}.inquiry-head p{margin-top:7px}}
+
+</style>
+
+<!-- Google Analytics 4: replace G-XXXXXXXXXX with your real Measurement ID -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());
+gtag('config','G-XXXXXXXXXX');
+</script>
+
+
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://gunudigital.in/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Gunu Digital | Digital Seva, Aapke Liye">
+<meta property="og:description" content="Digital Seva, online form assistance, documents, business promotion, website setup and WhatsApp support in Jaipur.">
+<meta property="og:url" content="https://gunudigital.in/">
+<script type="application/ld+json">
+{
+ "@context":"https://schema.org",
+ "@type":"LocalBusiness",
+ "name":"Gunu Digital",
+ "url":"https://gunudigital.in/",
+ "description":"Digital services and online application assistance in Jaipur.",
+ "address":{"@type":"PostalAddress","addressLocality":"Jaipur","addressRegion":"Rajasthan","addressCountry":"IN"},
+ "areaServed":"Jaipur"
+}
+</script>
+
+</head>
+<body>
+
+<!-- UPDATED FRONT ONLY: the rest of the original website remains unchanged -->
+<style>
+.front-wrap{position:relative;width:100%;background:#fcecf5;line-height:0;overflow:hidden}
+.front-wrap>img{display:block;width:100%;height:auto}
+.front-link{position:absolute;display:block;line-height:normal;z-index:3}
+.front-home{left:34.8%;top:2.2%;width:5%;height:5%}
+.front-services{left:40.8%;top:2.2%;width:7%;height:5%}
+.front-about{left:47.9%;top:2.2%;width:7%;height:5%}
+.front-blog{left:55%;top:2.2%;width:5%;height:5%}
+.front-contact{left:60.3%;top:2.2%;width:6%;height:5%}
+.front-wa{right:6.2%;top:1.6%;width:11.5%;height:7%}
+.front-hero-wa{left:7.3%;top:68%;width:27%;height:10%}
+.front-search{position:absolute;left:75.8%;top:1.15%;width:5.5%;height:7.2%;z-index:5;display:block;appearance:none;-webkit-appearance:none;border:0!important;outline:0!important;background:transparent!important;padding:0!important;margin:0!important;box-shadow:none!important;cursor:pointer}
+@media(max-width:700px){
+ .front-home,.front-services,.front-about,.front-blog,.front-contact{display:none}
+ .front-wa{right:4%;top:1.3%;width:20%;height:7%}
+ .front-hero-wa{left:7%;top:67%;width:35%;height:11%}
+ .front-search{left:76%;top:1.1%;width:8%;height:7.5%;min-width:42px;min-height:42px}
+}
+
+/* Functional website search */
+.search-trigger{display:block;width:44px;height:44px;padding:0;border:0;background:transparent;color:transparent;cursor:pointer;box-shadow:none;outline:none}
+.search-trigger:hover{transform:none;box-shadow:none;background:transparent}
+.search-overlay{position:fixed;inset:0;background:rgba(42,25,35,.35);backdrop-filter:blur(5px);z-index:100;display:none;padding:90px 18px 30px}
+.search-overlay.open{display:block}
+.search-box{width:min(680px,100%);margin:0 auto;background:#fff;border:1px solid #f0dce7;border-radius:24px;padding:18px;box-shadow:0 28px 80px rgba(40,20,35,.22)}
+.search-row{display:flex;gap:10px;align-items:center;background:#fff8fc;border:1px solid #eadbe4;border-radius:16px;padding:6px 8px 6px 14px}
+.search-row input{flex:1;border:0;outline:0;background:transparent;font:inherit;font-size:16px;color:#302a31;padding:10px}
+.search-close{border:0;background:#f8e7ef;color:#8d315c;width:38px;height:38px;border-radius:12px;cursor:pointer;font-size:20px}
+.search-results{margin-top:12px;display:grid;gap:8px;max-height:55vh;overflow:auto}
+.search-result{display:block;padding:13px 14px;border:1px solid #eee0e7;border-radius:14px;background:#fff;text-align:left;cursor:pointer}
+.search-result:hover{border-color:#d878a5;background:#fff7fb}
+.search-result b{display:block;color:#392d35}.search-result small{color:#81747d}
+.search-empty{text-align:center;color:#81747d;padding:18px}
+@media(max-width:800px){.search-trigger{width:42px;height:42px}}
+</style>
+
+<div class="front-wrap" id="home">
+  <img src="hero.png" alt="Gunu Digital - Digital Seva, Aapke Liye">
+  <a class="front-link front-home" href="#home" aria-label="Home"></a>
+  <a class="front-link front-services" href="#services" aria-label="Services"></a>
+  <a class="front-link front-about" href="#about" aria-label="About Us"></a>
+  <a class="front-link front-blog" href="#blog" aria-label="Blog"></a>
+  <a class="front-link front-contact" href="#contact" aria-label="Contact"></a>
+  <a class="front-link front-wa" href="https://wa.me/919999999999" target="_blank" rel="noopener" aria-label="WhatsApp"></a>
+  <button class="search-trigger front-search" type="button" aria-label="Search services" title="Search services"></button>
+  <a class="front-link front-hero-wa" href="https://wa.me/919999999999" target="_blank" rel="noopener" aria-label="WhatsApp par jankari lein"></a>
+</div>
+
+<div class="search-overlay" id="searchOverlay" role="dialog" aria-modal="true" aria-label="Website search">
+  <div class="search-box">
+    <div class="search-row">
+      <span aria-hidden="true">🔎</span>
+      <input id="siteSearch" type="search" placeholder="Service search karein… (e-Mitra, PAN, Railway, Resume)" autocomplete="off">
+      <button class="search-close" id="searchClose" type="button" aria-label="Close search">×</button>
+    </div>
+    <div class="search-results" id="searchResults"></div>
+  </div>
+</div>
+
+<div class="container category-grid">
+ <a class="category" href="#personal"><span><b>Online Services</b><small>आसान digital सहायता</small></span><span class="icon">👤</span></a>
+ <a class="category" href="#business"><span><b>Business Services</b><small>व्यवसाय के लिए solutions</small></span><span class="icon">💼</span></a>
+ <a class="category" href="#products"><span><b>Digital Products</b><small>Ready-to-use downloads</small></span><span class="icon">📦</span></a>
+</div>
+
+<span id="blog"></span>
+<section class="section" id="services">
+<div class="container">
+ <div class="eyebrow">Our Services</div><h2>हमारी प्रमुख सेवाएं</h2><p class="section-intro">अपनी जरूरत के अनुसार service चुनें और online process को आसान बनाएं।</p>
+ <div class="cards">
+  <article class="card" id="personal"><div class="card-head"><h3>👤 Personal Services</h3><p>व्यक्तिगत कामों के लिए</p></div><div class="list">
+   <div class="item"><span>Resume / CV Builder</span><span class="price">₹299–799</span></div>
+   <div class="item"><span>Online Form Assistance</span><span class="price">₹99–499</span></div>
+   <div class="item"><span>Document Formatting</span><span class="price">₹199–499</span></div>
+   <div class="item"><span>PDF / Document Work</span><span class="price">₹99–399</span></div>
+  </div></article>
+  <article class="card" id="business"><div class="card-head"><h3>💼 Business Services</h3><p>व्यवसाय के विकास के लिए</p></div><div class="list">
+   <div class="item"><span>Business Poster Design</span><span class="price">₹299–999</span></div>
+   <div class="item"><span>Visiting Card Design</span><span class="price">₹299–699</span></div>
+   <div class="item"><span>WhatsApp Catalogue</span><span class="price">₹999–2,999</span></div>
+   <div class="item"><span>Google Business Profile</span><span class="price">₹999–2,999</span></div>
+   <div class="item"><span>One Page Website</span><span class="price">₹2,999–7,999</span></div>
+  </div></article>
+  <article class="card" id="products"><div class="card-head"><h3>📦 Digital Products</h3><p>तैयार digital डाउनलोड</p></div><div class="list">
+   <div class="item"><span>Resume Templates</span><span class="price">₹99–499</span></div>
+   <div class="item"><span>Business Templates</span><span class="price">₹199–999</span></div>
+   <div class="item"><span>Excel Formats</span><span class="price">₹99–399</span></div>
+   <div class="item"><span>Study / Practice PDFs</span><span class="price">₹99–499</span></div>
+   <div class="item"><span>Canva Templates</span><span class="price">₹199–999</span></div>
+  </div></article>
+ </div>
+</div>
+</section>
+
+<section class="section" id="about">
+<div class="container">
+ <div class="about">
+  <div class="panel"><div class="eyebrow">About Us</div><h2>हम क्यों चुनें?</h2><p>Gunu Digital का उद्देश्य digital कामों को आसान, तेज और transparent तरीके से उपलब्ध कराना है।</p>
+   <div class="stats"><div class="stat"><b>100+</b>Projects</div><div class="stat"><b>10+</b>Services</div><div class="stat"><b>24×7</b>Support</div></div>
+  </div>
+  <div class="panel"><h3>हमारी priorities</h3><p>🛡️ <b>Professional Process</b><br><small>काम को व्यवस्थित तरीके से handle करना।</small></p><br><p>💗 <b>Affordable Pricing</b><br><small>स्पष्ट और उचित pricing options।</small></p><br><p>⚡ <b>Quick Delivery</b><br><small>समय पर काम पूरा करने पर focus।</small></p><br><p>💬 <b>Customer Support</b><br><small>जरूरत पड़ने पर आसान communication।</small></p></div>
+ </div>
+</div>
+</section>
+
+<section class="section" id="package">
+<div class="container">
+ <div class="package"><div><div class="eyebrow">Special Package</div><h3>Business Starter Package</h3><p>अपने business को professional digital presence दें।</p><div class="big-price">₹4,999</div><a class="btn primary" href="https://wa.me/919999999999?text=Hello%20Gunu%20Digital%2C%20mujhe%20Business%20Starter%20Package%20ki%20jankari%20chahiye." target="_blank">अभी पूछें →</a></div>
+ <div><ul><li>Basic Branding</li><li>Visiting Card Design</li><li>5 Promotional Posters</li><li>WhatsApp Catalogue</li><li>One Page Website</li><li>Google Business Profile Assistance</li></ul></div></div>
+</div>
+</section>
+
+<section class="section" id="contact">
+<div class="container contact">
+ <div class="panel"><div class="eyebrow">Contact</div><h2>काम शुरू करें</h2><p class="section-intro">अपनी requirement WhatsApp पर भेजें। हम आपको service और pricing के बारे में बताएंगे।</p><a class="btn primary" href="https://wa.me/919999999999" target="_blank">💬 WhatsApp करें</a></div>
+ <div class="panel"><h3>Gunu Digital</h3><p>📍 Jaipur, Rajasthan</p><p>📱 WhatsApp: +91 99999 99999</p><p>✉️ hello@gunudigital.in</p></div>
+</div>
+</section>
+</main>
+
+
+<section id="lead-form" style="background:#fff8fc;padding:72px 7%">
+<div class="inquiry-wrap">
+  <div class="inquiry-info">
+    <span class="inquiry-badge">✦ Quick Inquiry</span>
+    <h3>आपकी जरूरत, हमारी मदद।</h3>
+    <p>अपनी service की details भेजें। आपकी requirement समझकर WhatsApp पर जल्दी reply किया जाएगा।</p>
+    <div class="inquiry-points">
+      <div class="inquiry-point"><span class="dot">✓</span><span><b>Simple Process</b><br>Details भरें और WhatsApp पर request भेजें।</span></div>
+      <div class="inquiry-point"><span class="dot">₹</span><span><b>Transparent Pricing</b><br>काम शुरू करने से पहले pricing बताई जाएगी।</span></div>
+      <div class="inquiry-point"><span class="dot">⚡</span><span><b>Fast Support</b><br>Online services और digital work के लिए quick assistance।</span></div>
+    </div>
+  </div>
+
+  <div class="inquiry-card">
+    <div class="inquiry-head">
+      <div><h3>Inquiry Details</h3><p>नीचे की details भरें — कोई payment अभी नहीं होगा।</p></div>
+      <span class="inquiry-badge">🔒 Secure</span>
+    </div>
+    <form id="leadForm">
+      <div class="form-grid">
+        <div class="field"><label for="leadName">नाम *</label><input id="leadName" name="name" required placeholder="अपना नाम लिखें"></div>
+        <div class="field"><label for="leadPhone">Mobile Number *</label><input id="leadPhone" name="phone" required inputmode="tel" pattern="[0-9+()\- ]{10,16}" placeholder="98XXXXXXXX"></div>
+        <div class="field"><label for="leadService">Service चुनें *</label><select id="leadService" name="service" required><option value="">Select service</option><option>Online Form Assistance</option><option>e-Mitra / Government Services</option><option>PAN Card / Udyam / BRN</option><option>Railway / SSC / Competitive Exam Form</option><option>Resume / CV</option><option>Business Promotion</option><option>Website / Digital Service</option><option>Other</option></select></div>
+        <div class="field"><label for="leadCity">City / Area</label><input id="leadCity" name="city" placeholder="Jaipur / Area"></div>
+        <div class="field full"><label for="leadNeed">Requirement / Message *</label><textarea id="leadNeed" name="need" required placeholder="आपको किस काम में सहायता चाहिए? थोड़ी detail लिखें..."></textarea></div>
+      </div>
+      <button class="inquiry-submit" type="submit">💬 WhatsApp पर Inquiry भेजें</button>
+      <p class="inquiry-note">आपकी details केवल आपकी inquiry पर reply करने के लिए इस्तेमाल की जाएंगी।</p>
+    </form>
+  </div>
+</div>
+</section>
+
+<script>
+(function(){
+ const overlay=document.getElementById('searchOverlay'), input=document.getElementById('siteSearch'), results=document.getElementById('searchResults');
+ const trigger=document.querySelector('.search-trigger'), close=document.getElementById('searchClose');
+ const items=[
+  ['Online Form Assistance','Government forms, online applications, document upload','services'],
+  ['e-Mitra / Government Services','e-Mitra Jaipur, online government service assistance','personal'],
+  ['PAN Card / Udyam / BRN','PAN correction, Udyam/MSME and business registration assistance','business'],
+  ['Railway / SSC / Competitive Exam Form','RRB, Railway, SSC, JEE, NEET, UPSC, CDS, UGC NET and recruitment forms','services'],
+  ['Resume / CV Maker','Professional resume and CV formatting','personal'],
+  ['Business Promotion','Business posters, visiting cards, WhatsApp catalogue and Google Business Profile','business'],
+  ['Website / Digital Service','One-page website and digital setup services','business'],
+  ['Digital Products','Resume templates, business templates, Excel formats and Canva templates','products']
+ ];
+ function openSearch(){overlay.classList.add('open'); input.value=''; render(''); setTimeout(()=>input.focus(),30);}
+ function closeSearch(){overlay.classList.remove('open');}
+ function render(q){
+  const term=q.trim().toLowerCase();
+  const found=items.filter(x=>(x[0]+' '+x[1]).toLowerCase().includes(term));
+  results.innerHTML=found.length?found.map(x=>`<button class="search-result" type="button" data-target="${x[2]}"><b>${x[0]}</b><small>${x[1]}</small></button>`).join(''):'<div class="search-empty">कोई matching service नहीं मिली। दूसरा keyword try करें।</div>';
+  results.querySelectorAll('[data-target]').forEach(b=>b.addEventListener('click',()=>{closeSearch();document.getElementById(b.dataset.target)?.scrollIntoView({behavior:'smooth',block:'start'});}));
+ }
+ trigger?.addEventListener('click',openSearch); close?.addEventListener('click',closeSearch); input?.addEventListener('input',e=>render(e.target.value));
+ overlay?.addEventListener('click',e=>{if(e.target===overlay) closeSearch();});
+ document.addEventListener('keydown',e=>{if(e.key==='Escape') closeSearch(); if(e.key==='/' && document.activeElement!==input){e.preventDefault();openSearch();}});
+})();
+</script>
+
+<script>
+document.getElementById('leadForm').addEventListener('submit',function(e){
+ e.preventDefault();
+ const f=new FormData(this);
+ const msg=`Namaste Gunu Digital!\nName: ${f.get('name')}\nMobile: ${f.get('phone')}\nService: ${f.get('service')}\nCity/Area: ${f.get('city')||'Not provided'}\nRequirement: ${f.get('need')}`;
+ if(typeof gtag==='function') gtag('event','generate_lead',{event_category:'lead',event_label:'Modern WhatsApp Inquiry Form'});
+ window.open('https://wa.me/919999999999?text='+encodeURIComponent(msg),'_blank');
+});
+</script>
+
+<footer><div class="container footer"><div>© 2026 Gunu Digital. All rights reserved.</div><div>Home · Services · About · Contact</div></div></footer>
+<a class="whatsapp-float" href="https://wa.me/919999999999" target="_blank" aria-label="WhatsApp">☏</a>
+
+<script>
+document.addEventListener('click',function(e){
+  const a=e.target.closest('a');
+  if(!a) return;
+  const href=a.getAttribute('href')||'';
+  if(href.indexOf('wa.me')!==-1){
+    if(typeof gtag==='function') gtag('event','whatsapp_click',{event_category:'lead',event_label:'WhatsApp'});
+  } else if(href.indexOf('tel:')===0){
+    if(typeof gtag==='function') gtag('event','phone_click',{event_category:'lead',event_label:'Phone'});
+  } else if(href.indexOf('mailto:')===0){
+    if(typeof gtag==='function') gtag('event','email_click',{event_category:'lead',event_label:'Email'});
+  }
+});
+</script>
+
+</body>
+</html>
